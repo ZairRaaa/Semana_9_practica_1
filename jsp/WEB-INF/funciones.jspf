@@ -1,0 +1,11 @@
+<%@ page import="java.util.Map,java.util.LinkedHashMap,java.util.ArrayList,java.util.List" %>
+<%!
+private String escapar(String texto) {
+    if (texto == null) return "";
+    return texto.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;").replace("\"", "&quot;").replace("'", "&#39;");
+}
+private String dato(jakarta.servlet.http.HttpServletRequest request, String nombre) {
+    String valor = request.getParameter(nombre);
+    return valor == null ? "" : valor.trim();
+}
+%>
